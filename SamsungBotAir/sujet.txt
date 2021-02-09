@@ -1,0 +1,31 @@
+grille de 66x66 : si accessible = 1
+innacessible = -1
+inconnu = 0
+
+interface IMotion
+controller motionController
+
+public Bool Move(d: distance){
+//si il peut se déplacer de d mètres
+}
+public void Rotate (a : angle){
+//tourne dans le sens horaire de a degres
+//return true : on considère qu'il s'est déplacé
+//return false : on considère qu'il ne s'est pas déplacé
+}
+
+isObstacle ()
+
+test possible 
+
+GetPositionActuelle()
+
+Avancer jusqu'à obstacle()
+Tourner à droite()
+Tourner à gauche()
+ChangerPosition() 
+
+Tourne de X°()
+AvanceDeXmetre()
+
+
