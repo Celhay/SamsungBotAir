@@ -7,11 +7,12 @@ controller motionController
 
 public Bool Move(d: distance){
 //si il peut se déplacer de d mètres
+//return true : on considère qu'il s'est déplacé
+//return false : on considère qu'il ne s'est pas déplacé
 }
 public void Rotate (a : angle){
 //tourne dans le sens horaire de a degres
-//return true : on considère qu'il s'est déplacé
-//return false : on considère qu'il ne s'est pas déplacé
+
 }
 
 isObstacle ()
