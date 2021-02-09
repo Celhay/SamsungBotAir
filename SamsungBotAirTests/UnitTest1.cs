@@ -6,8 +6,29 @@ namespace SamsungBotAirTests
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void AvancerDe40CMetres()
         {
+            
+        }
+        [TestMethod]
+        public void AvancerJusquAObstacle()
+        {
+
+        }
+        [TestMethod]
+        public void TournerADroite()
+        {
+
+        }
+        [TestMethod]
+        public void TournerAGauche()
+        {
+
+        }
+        [TestMethod]
+        public void ChangerPosition()
+        {
+
         }
     }
 }
