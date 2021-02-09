@@ -8,6 +8,10 @@ namespace SamsungBotAir
     {
         private int[,] grille;
 
+        public Processing()
+        {
+            InitGrille();
+        }
         private void InitGrille()
         {
             grille = new int[66, 66];
@@ -35,11 +39,12 @@ namespace SamsungBotAir
                         else
                             grille[x, y] = 1;
                     }
-                    //if(motion.grille ==)
                 }
             }
         }
-        private bool CheckObstacle(int x, int y)
+
+        //si le capteur trouve quelque chose il retourne -1
+        public bool CheckObstacle(int x, int y)
         {
             if ( (x <= 5  && y == 5 ) )
             {

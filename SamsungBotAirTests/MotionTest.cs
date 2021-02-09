@@ -12,15 +12,16 @@ namespace SamsungBotAirTests
         [TestInitialize]
         public void Initialise()
         {
-            motion = new Motion();
             processing = new Processing();
+            motion = new Motion(processing.getGrille());
+            
         }
 
         [TestMethod]
         public void CreationDeLaGrille()
         { 
             int[,] expected = new int[66, 66];
-            Assert.AreEqual(expected.ToString(), motion.grille.ToString());
+            Assert.AreEqual(expected.ToString(), processing.getGrille().ToString());
         }
         [TestMethod]
         public void AvancerDe40CMetres()
@@ -52,13 +53,15 @@ namespace SamsungBotAirTests
         [TestMethod]
         public void CheckObstacle_returnTrue()
         {
-
+            var actual = processing.CheckObstacle(5, 5);
+            Assert.IsTrue(actual);
         }
 
         [TestMethod]
         public void CheckObstacle_returnFalse()
         {
-
+            var actual = processing.CheckObstacle(5, 5);
+            Assert.IsFalse(actual);
         }
     }
 }
