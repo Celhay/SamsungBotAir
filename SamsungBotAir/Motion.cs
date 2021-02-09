@@ -50,8 +50,8 @@ namespace SamsungBotAir
             var angleAbs = Math.Abs(angle);
             if(angleAbs >= 360)
                 throw new Exception("La rotation ne doit pas dépasser 360°");
-            if(angleAbs%45 != 0)
-                throw new Exception("La rotation doit être un multiple de 45°");
+            if(angleAbs%90 != 0)
+                throw new Exception("La rotation doit être un multiple de 90 °");
 
 
         }
