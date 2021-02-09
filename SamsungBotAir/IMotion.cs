@@ -6,7 +6,7 @@ namespace SamsungBotAir
 {
     interface IMotion
     {
-        bool Move(float distance);
+        bool Move(int distance);
 
         void Rotate(int angle);
     }

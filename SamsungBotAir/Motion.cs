@@ -8,6 +8,12 @@ namespace SamsungBotAir
     {
         private int[,] grille;
         private int x, y;
+        private enum direction { 
+            horizontalBas = 1,
+            horizontalHaut = 2,
+            VerticalBas = 3,
+            VerticalHaut = 4,
+        };
 
         public Motion(int[,] grille)
         {
@@ -21,14 +27,17 @@ namespace SamsungBotAir
             if(distance <= 0)
                 throw new ArgumentOutOfRangeException(nameof(distance), "La distance ne peut pas être négative");
 
-            //try
-            //{
-
-            //}
-            //catch ()
-            //{
-
-            //}
+            try
+            {
+                for (int newCase = 0; newCase < distance; newCase++)
+                {
+                    if()
+                }
+            }
+            catch (IndexOutOfRangeException e)
+            {
+                throw new InvalidOperationException("La distance est trop grande", e);
+            }
 
             return true;
             //si il peut se déplacer de d mètres
@@ -38,7 +47,13 @@ namespace SamsungBotAir
 
         public void Rotate(int angle)
         {
-            //tourne dans le sens de a degres
+            var angleAbs = Math.Abs(angle);
+            if(angleAbs >= 360)
+                throw new Exception("La rotation ne doit pas dépasser 360°");
+            if(angleAbs%45 != 0)
+                throw new Exception("La rotation doit être un multiple de 45°");
+
+
         }
 
         public void AfficherGrille()
