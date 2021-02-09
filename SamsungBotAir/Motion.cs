@@ -31,31 +31,55 @@ namespace SamsungBotAir
 
             try
             {
+                int newX = x;
+                int newY = y;
                 for (int newCase = 0; newCase < distance; newCase++)
                 { 
                     switch (dir)
                     {
                         case (int)direction.horizontalGauche:
-                            //if()
+                            if (grille[newX - newCase, newY] == -1)
+                                return false;
+                            else
+                            {
+                                newX -= newCase;
+                            }
                             break;
                         case (int)direction.VerticalHaut:
+                            if (grille[newX, newY- newCase] == -1)
+                                return false;
+                            else
+                            {
+                                newY -= newCase;
+                            }
                             break;
                         case (int)direction.horizontalDroite:
+                            if (grille[newX + newCase, newY] == -1)
+                                return false;
+                            else
+                            {
+                                x += newCase;
+                            }
                             break;
                         case (int)direction.VerticalBas:
+                            if (grille[newX, newY + newCase] == -1)
+                                return false;
+                            else
+                            {
+                                newY += newCase;
+                            }
                             break;
                     } 
                 }
+                x = newX;
+                y = newY;
             }
             catch (IndexOutOfRangeException e)
             {
                 throw new InvalidOperationException("La distance est trop grande", e);
             }
 
-            return true;
-            //si il peut se déplacer de d mètres
-            //return true : on considère qu'il s'est déplacé
-            //return false : on considère qu'il ne s'est pas déplacé
+            return true;  
         }
 
         public void Rotate(int angle)
