@@ -53,14 +53,14 @@ namespace SamsungBotAirTests
         [TestMethod]
         public void CheckObstacle_returnTrue()
         {
-            var actual = processing.CheckObstacle(5, 5);
+            var actual = processing.CheckObstacle(4, 5);
             Assert.IsTrue(actual);
         }
 
         [TestMethod]
         public void CheckObstacle_returnFalse()
         {
-            var actual = processing.CheckObstacle(5, 5);
+            var actual = processing.CheckObstacle(4, 4);
             Assert.IsFalse(actual);
         }
     }

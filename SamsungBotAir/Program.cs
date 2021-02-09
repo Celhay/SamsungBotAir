@@ -8,7 +8,10 @@ namespace SamsungBotAir
         {
             Processing processing = new Processing();
             Motion motion = new Motion(processing.getGrille());
+            processing.Scan(motion);
             motion.AfficherGrille();
+
+            Console.ReadKey();
         }
     }
 }

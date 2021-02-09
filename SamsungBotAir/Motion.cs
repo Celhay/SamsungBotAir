@@ -31,7 +31,7 @@ namespace SamsungBotAir
             {
                 for (int newCase = 0; newCase < distance; newCase++)
                 {
-                    if()
+                    //if()
                 }
             }
             catch (IndexOutOfRangeException e)

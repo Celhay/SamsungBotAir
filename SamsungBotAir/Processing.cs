@@ -25,17 +25,23 @@ namespace SamsungBotAir
             }
             grille[1, 1] = 1;
         }
-
+        public int[,] getGrille()
+        {
+            return grille;
+        }
         public void Scan(Motion motion)
         {
             for (int x = 0; x < 66; x++)
             {
                 for (int y = 0; y < 66; y++)
                 {
-                    if(grille[x,y] == 0)
+                    if (grille[x, y] == 0)
                     {
                         if (CheckObstacle(x, y))
+                        {
                             grille[x, y] = -1;
+                            x++;
+                        }
                         else
                             grille[x, y] = 1;
                     }
@@ -44,9 +50,10 @@ namespace SamsungBotAir
         }
 
         //si le capteur trouve quelque chose il retourne -1
+        //public bool CheckObstacle()
         public bool CheckObstacle(int x, int y)
         {
-            if ( (x <= 5  && y == 5 ) )
+            if ((x <= 5 && y == 5))
             {
                 return true;
             }
