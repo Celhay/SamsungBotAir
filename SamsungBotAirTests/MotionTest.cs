@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace SamsungBotAirTests
 {
     [TestClass]
-    public class UnitTest1
+    public class MotionTest
     {
         [TestMethod]
         public void AvancerDe40CMetres()
