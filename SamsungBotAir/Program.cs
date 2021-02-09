@@ -6,7 +6,8 @@ namespace SamsungBotAir
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Motion motion = new Motion();
+            motion.AfficherGrille();
         }
     }
 }

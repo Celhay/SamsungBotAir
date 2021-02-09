@@ -1,10 +1,18 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SamsungBotAir;
 
 namespace SamsungBotAirTests
 {
     [TestClass]
     public class MotionTest
     {
+        [TestMethod]
+        public void CreationDeLaGrille()
+        {
+            Motion motion = new Motion();
+            int[,] expected = new int[66, 66];
+            Assert.AreEqual(expected.ToString(), motion.grille.ToString());
+        }
         [TestMethod]
         public void AvancerDe40CMetres()
         {
