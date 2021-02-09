@@ -6,7 +6,13 @@ namespace SamsungBotAir
 {
     public class Motion : IMotion
     {
-        public int[,] grille = new int[66, 66];
+        private int[,] _grille; 
+        public int[,] grille
+        {
+            get { return _grille; }
+            set { _grille = value; }
+        }
+
 
         public Motion()
         {
@@ -18,6 +24,7 @@ namespace SamsungBotAir
 
         private void InitGrille()
         {
+            grille = new int[66,66];
             for (int x = 0; x < 66; x++)
             {
                 for (int y = 0; y < 66; y++)
@@ -53,5 +60,7 @@ namespace SamsungBotAir
                 Console.WriteLine("");
             }
         }
+
+
     }
 }
