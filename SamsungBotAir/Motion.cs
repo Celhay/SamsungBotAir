@@ -6,38 +6,30 @@ namespace SamsungBotAir
 {
     public class Motion : IMotion
     {
-        private int[,] _grille; 
-        public int[,] grille
-        {
-            get { return _grille; }
-            set { _grille = value; }
-        }
+        private int[,] grille;
+        private int x, y;
 
-
-        public Motion()
+        public Motion(int[,] grille)
         {
-            // première ligne et dernière ligne
-            // première colonne et dernière colonne
-            // point de départ (1,1) en haut à gauche
-            InitGrille();
-        }
+            this.grille = grille;
+            x = 1;
+            y = 1;
+        } 
 
-        private void InitGrille()
+        public bool Move(int distance)
         {
-            grille = new int[66,66];
-            for (int x = 0; x < 66; x++)
-            {
-                for (int y = 0; y < 66; y++)
-                {
-                    if (x == 0 || x == 65 || y == 0 || y == 65)
-                        grille[x, y] = -1;
-                }
-            }
-            grille[1, 1] = 1;
-        }
+            if(distance <= 0)
+                throw new ArgumentOutOfRangeException(nameof(distance), "La distance ne peut pas être négative");
 
-        public bool Move(float distance)
-        {
+            //try
+            //{
+
+            //}
+            //catch ()
+            //{
+
+            //}
+
             return true;
             //si il peut se déplacer de d mètres
             //return true : on considère qu'il s'est déplacé
