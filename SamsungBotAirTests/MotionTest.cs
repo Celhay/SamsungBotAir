@@ -7,11 +7,13 @@ namespace SamsungBotAirTests
     public class MotionTest
     {
         private Motion motion;
+        private Processing processing;
 
         [TestInitialize]
         public void Initialise()
         {
             motion = new Motion();
+            processing = new Processing();
         }
 
         [TestMethod]
@@ -43,6 +45,18 @@ namespace SamsungBotAirTests
         }
         [TestMethod]
         public void ChangerPosition()
+        {
+
+        }
+
+        [TestMethod]
+        public void CheckObstacle_returnTrue()
+        {
+
+        }
+
+        [TestMethod]
+        public void CheckObstacle_returnFalse()
         {
 
         }

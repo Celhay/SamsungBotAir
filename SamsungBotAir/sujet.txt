@@ -29,4 +29,7 @@ ChangerPosition()
 Tourne de X°()
 AvanceDeXmetre()
 
+scan : Analyse piece()
+set 0 to 1
+if -1 arreter l'analyse (ligne suivante)
 
