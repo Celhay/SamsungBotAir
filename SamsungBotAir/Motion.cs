@@ -8,11 +8,12 @@ namespace SamsungBotAir
     {
         private int[,] grille;
         private int x, y;
+        private int dir;
         private enum direction { 
-            horizontalBas = 1,
-            horizontalHaut = 2,
-            VerticalBas = 3,
-            VerticalHaut = 4,
+            horizontalGauche = 1,
+            VerticalHaut = 2,
+            horizontalDroite = 3,
+            VerticalBas = 4,
         };
 
         public Motion(int[,] grille)
@@ -20,6 +21,7 @@ namespace SamsungBotAir
             this.grille = grille;
             x = 1;
             y = 1;
+            dir = (int)direction.horizontalDroite;
         } 
 
         public bool Move(int distance)
@@ -30,8 +32,19 @@ namespace SamsungBotAir
             try
             {
                 for (int newCase = 0; newCase < distance; newCase++)
-                {
-                    //if()
+                { 
+                    switch (dir)
+                    {
+                        case (int)direction.horizontalGauche:
+                            //if()
+                            break;
+                        case (int)direction.VerticalHaut:
+                            break;
+                        case (int)direction.horizontalDroite:
+                            break;
+                        case (int)direction.VerticalBas:
+                            break;
+                    } 
                 }
             }
             catch (IndexOutOfRangeException e)
@@ -53,7 +66,8 @@ namespace SamsungBotAir
             if(angleAbs%90 != 0)
                 throw new Exception("La rotation doit être un multiple de 90 °");
 
-
+            int step = angle / 90;
+            dir = (dir + step) % 4;
         }
 
         public void AfficherGrille()
